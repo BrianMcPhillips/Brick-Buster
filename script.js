@@ -7,6 +7,9 @@ const rulesBtn = document.getElementById('rules-btn'),
 
 let score = 0;
 
+const brickRowCount = 9;
+const brickColumnCount = 5;
+
 // Create Ball props
 const ball = {
   x: canvas.width / 2,
@@ -24,6 +27,15 @@ const paddle = {
   h: 10,
   speed: 8,
   dx: 0
+}
+
+const brickInfo = {
+  w: 70,
+  h: 20,
+  padding: 10,
+  offsetX: 45,
+  offsetY: 60,
+  visible: true
 }
 
 // Draw ball on canvas 
@@ -60,8 +72,8 @@ draw();
 
 rulesBtn.addEventListener('click', () => {
   rules.classList.add('show');
-})
+});
 
 closeBtn.addEventListener('click', () =>  {
   rules.classList.remove('show');
-})
+});
