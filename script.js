@@ -2,8 +2,10 @@
 const rulesBtn = document.getElementById('rules-btn'),
   closeBtn = document.getElementById('close-btn'),
   rules = document.getElementById('rules'),
-  canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+  canvas = document.getElementById('canvas'),
+  ctx = canvas.getContext('2d');
+
+let score = 0;
 
 // Create Ball props
 const ball = {
@@ -44,6 +46,12 @@ function drawPaddle() {
 function draw() {
   drawBall();
   drawPaddle();
+  drawScore();
+}
+
+function drawScore() {
+  ctx.font = '20px Arial';
+  ctx.fillText(`Score:${score}`, canvas.width - 100, 30);
 }
 
 draw();
